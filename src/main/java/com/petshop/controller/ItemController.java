@@ -33,4 +33,10 @@ public class ItemController {
     public Item findById(@PathVariable Long id) throws ItemNotFoundException {
         return itemService.procuraPorId(id);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletaPorId(@PathVariable Long id) throws ItemNotFoundException {
+        itemService.deletaPorId(id);
+    }
 }

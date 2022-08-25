@@ -32,6 +32,11 @@ public class ItemService {
         return item;
     }
 
+    public void deletaPorId(Long id) throws ItemNotFoundException{
+        verificaSeExiste(id);
+        itemRepository.deleteById(id);
+    }
+
     private Item verificaSeExiste(Long id) throws ItemNotFoundException {
         return itemRepository.findById(id)
                 .orElseThrow(() -> new ItemNotFoundException(id));
