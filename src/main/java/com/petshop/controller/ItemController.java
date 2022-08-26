@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/apipetshop/v1/item")
@@ -24,13 +25,13 @@ public class ItemController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Item createPerson(@RequestBody Item item){
+    public Item criaItem(@RequestBody @Valid Item item){
         return itemService.criaItem(item);
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Item findById(@PathVariable Long id) throws ItemNotFoundException {
+    public Item procuraPorId(@PathVariable Long id) throws ItemNotFoundException {
         return itemService.procuraPorId(id);
     }
 
@@ -38,5 +39,10 @@ public class ItemController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletaPorId(@PathVariable Long id) throws ItemNotFoundException {
         itemService.deletaPorId(id);
+    }
+
+    @PutMapping("/{id}")
+    public Item updatePorId(@PathVariable Long id, @RequestBody @Valid Item item) throws ItemNotFoundException {
+        return itemService.updatePorId(id, item);
     }
 }
