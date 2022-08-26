@@ -13,13 +13,13 @@ Url: http://localhost:8080/apipetshop/v1/item
 Url: http://localhost:8080/apipetshop/v1/item
 
 <h4>RequestMethod *GET* - Retorna um ítem por ID</h4>
-Url: http://localhost:8080/apipetshop/v1/item{id}
+Url: http://localhost:8080/apipetshop/v1/item/{id}
 
 <h4>RequestMethod *PUT* - Atualiza os dados de um ítem apartir do Id</h4>
 Url: http://localhost:8080/apipetshop/v1/item/{id}
 
 <h4>RequestMethod *Delete* - Deleta um ítem apartir do Id</h4>
-Url: http://localhost:8080/api/v1/people/{id}
+Url: http://localhost:8080/apipetshop/v1/item/{id}
 
 <h4>API configurada com Swagger. Url para acesso:</h4>
 http://localhost:8080/swagger-ui.html
