@@ -25,5 +25,4 @@ public class Item {
 
     @Column(nullable = false)
     private int quantidade;
-
 }
