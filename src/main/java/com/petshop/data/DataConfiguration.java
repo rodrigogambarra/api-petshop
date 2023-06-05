@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.stereotype.Controller;
+
 
 import javax.sql.DataSource;
 
@@ -18,9 +18,9 @@ public class DataConfiguration {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");//com.mysql.jdbc.Driver
-        dataSource.setUrl("jdbc:mysql://localhost:3306/apipetshop");
-        dataSource.setUsername("rodrigo");
-        dataSource.setPassword("Rodrigo_123");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/apipetshop?createDatabaseIfNotExist=true&autoReconnect=true");
+        dataSource.setUsername("root");
+        dataSource.setPassword("Teste_123");
         return dataSource;
     }
 
